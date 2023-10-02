@@ -7,23 +7,34 @@ conn = abrirBancoDados("localhost", "root", "s@M{0511_", "ouvidoria")
 
 while opcao != 5:
     print("OUVIDORIA")
-    print("1 listar, 2 adicionar, 3 alterar, 4 excluir, 5 sair do sistema")
-    opcao = int(input("digite a sua opcao: "))
+    print("Estamos aqui para lhe ajudar! Registre sua manifestação e nós a levaremos ao conhecimento da instância pertinente.")
+
+    print("1. Listar Manifestações")
+    print("2. Adicionar Nova Manifestação")
+    print("3. Alterar Manifestação")
+    print("4. Excluir Manifestação")
+    print("5. Sair do Sistema")
+
+    opcao = int(input("Digite a sua opção: "))
 
     if opcao == 1:
-        print("Lista de Manifestações")
+        print("Portfólio de Manifestações Registradas no Sistema: ")
         consultaSqlListagemManifestacoes = "select * from ouvidoria_bd"
         manifestacao = listarBancoDados(conn, consultaSqlListagemManifestacoes)
 
-        for f in manifestacao:
-            print(f)
+        for f in range (len(manifestacao)):
+            print(f + 1, ". Tipo de Manifestação: " ,manifestacao[f][1], "| Assunto: ", manifestacao[f][2], "| Registro: ", manifestacao [f][3])
 
     elif opcao == 2:
-        print("Tipo de Manifestação:\n\n 1 reclamação, 2 sugestão, 3 elogio")
+        print("Registre aqui sua manifestação de acordo com as categorias a seguir: ")
+        print("\nTIPO DE MANIFESTAÇÃO\n")
+        print("* Reclamação")
+        print("* Sugestão")
+        print("* Elogio\n")
 
-        tipoManifestacao = input("digite o tipo de manifestação que você deseja fazer: ")
-        assuntoManifestacao = input("digite o assunto: ")
-        manifestacao = input("fale aqui: ")
+        tipoManifestacao = input("Digite o tipo de manifestação que você deseja fazer: ")
+        assuntoManifestacao = input("Digite o assunto: ")
+        manifestacao = input("Fale aqui: ")
 
         consultaManifestcao = "insert into ouvidoria_bd (tipo_manifestacao, assunto, manifestacao) values (%s, %s, %s)"
         dados = [tipoManifestacao, assuntoManifestacao, manifestacao]
@@ -37,8 +48,8 @@ while opcao != 5:
 
         elif len(manifestacao) > 0:
             print("Portfólio de Manifestações: ")
-            for i in range(len(manifestacao)):
-                print(i + 1, manifestacao[i])
+            for f in range(len(manifestacao)):
+                print(f + 1, ". Tipo de Manifestação: ", manifestacao[f][1], "| Assunto: ", manifestacao[f][2], "| Registro: ", manifestacao[f][3])
 
             codigoManifestacao = int(input("Digite o código da reclamação que deseja alterar: "))
 
@@ -58,8 +69,8 @@ while opcao != 5:
 
         elif len(manifestacao) > 0:
             print("Portfólio de Manifestações: ")
-            for i in range(len(manifestacao)):
-                print(i + 1, manifestacao[i])
+            for f in range(len(manifestacao)):
+                print(f + 1, ". Tipo de Manifestação: ", manifestacao[f][1], "| Assunto: ", manifestacao[f][2], "| Registro: ", manifestacao[f][3])
 
             codigoManifestacao = int(input("Digite o código da reclamação que deseja excluir: "))
 
@@ -71,8 +82,11 @@ while opcao != 5:
                 manifestacao.pop(codigoManifestacao - 1)
                 print("Manifestação excluída!")
 
+            else:
+                print("Número de manifestação inválido! Tente novamente.")
+
     elif opcao != 5:
         print("Opcao invalida! Tente outra vez.")
 
 encerrarBancoDados(conn)
-print("Obrigado por colaborar com nosso sistema!")
+print("Obrigado por colaborar com nosso sistema! Até mais.")
