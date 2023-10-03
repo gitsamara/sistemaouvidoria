@@ -1,0 +1,10 @@
+/* create table ouvidoria_bd (
+
+	codigo int auto_increment,
+    tipo_manifestacao varchar (50),
+    assunto varchar (100),
+    manifestacao varchar (1000),
+    primary key (codigo)
+); 
+
+insert into ouvidoria_bd (tipo_manifestacao, assunto, manifestacao) values ("reclamação", "infraestrutura", "as luzes do campus estão escuras"); */
