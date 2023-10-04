@@ -25,7 +25,7 @@ Os arquivos deste repositório obedecem a seguinte lógica:
 | ------ | ------ |
 | main.txt | código executável |
 | mysql.txt | create do banco de dados realizado no MySQL |
-| operacoesbd.py | arquivo com os métodos utilizados no sistema |
+| operacoesbd.py | arquivo com os métodos principais do sistema |
 | ouvidoria-insert.py | código para inserir dados ao banco de dados |
 | ouvidoria-select.py | código select do banco de dados |
 | ouvidoria_teste.py | versão inicial da integração do sistema com o banco de dados |
