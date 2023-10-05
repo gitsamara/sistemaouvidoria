@@ -1,4 +1,4 @@
-from ouvidoria_final import *
+from ouvidoria_versao02 import *
 
 def main():
     conn = abrirBancoDados("localhost", "root", "s@M{0511_", "ouvidoria")
