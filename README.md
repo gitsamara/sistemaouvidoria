@@ -28,8 +28,6 @@ Os arquivos deste repositório obedecem a seguinte lógica:
 | operacoesbd.py | arquivo com os métodos principais do sistema |
 | ouvidoria-insert.py | código para inserir dados ao banco de dados |
 | ouvidoria-select.py | código select do banco de dados |
-| ouvidoria_teste.py | versão inicial da integração do sistema com o banco de dados |
+| ouvidoria_teste.py | versões iniciais da integração do sistema com o banco de dados |
 | ouvidoria_versao01.py | versão simples do sistema, apenas com estrutura de dados lista |
 | ouvidoria_versao02.py | versão final e completa do sistema |
-
-> Material de aprendizado utilizado: http://www.daniel-abella.com/unifacisa/p1/
